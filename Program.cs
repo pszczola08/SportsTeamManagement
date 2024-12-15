@@ -8,7 +8,7 @@ class Program {
         Team Team = new(name);
 
         while (true) {
-            Console.Write("\nWhat do you want to do? (A - Add Player, B - Add Game, C - Show statistics, D - Player scored): ");
+            Console.Write("\nWhat do you want to do? (A - Add Player, B - Add Game, C - Show statistics, D - Player scored, E - Search player by position): ");
             string? c = Console.ReadLine();
             switch (c) {
                 case "A":
@@ -38,6 +38,11 @@ class Program {
                     Console.Write("Who scored?: ");
                     string? pl = Console.ReadLine();
                     Team.Score(pl);
+                    break;
+                case "E":
+                    Console.Write("Search for position: ");
+                    string? pos = Console.ReadLine();
+                    Team.WriteByPosition(pos);
                     break;
                 default:
                     break;

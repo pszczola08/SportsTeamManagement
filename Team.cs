@@ -25,6 +25,12 @@ class Team {
     public void Score(string name) {
         PlayerList.First(player => player.Name == name).PlayerScore();
     }
+    public void WriteByPosition(string Name) {
+        List<Player> filter = PlayerList.Where(pl => pl.Position == Name).ToList();
+        foreach (var player in filter) {
+            Console.WriteLine(player.Name);
+        }
+    }
 }
 
 record Game (
